@@ -1,0 +1,36 @@
+version: '3.7'
+
+networks:
+  mtls-example:
+    name: mtls-example
+
+services:
+  mtls-webapi-proxy:
+    container_name: mtls-webapi-proxy
+    image: nginx:latest
+    ports:
+      - 5000:5000
+      - 5684:5684
+    volumes:
+      - ./nginx/webapi.http.conf:/etc/nginx/conf.d/http.conf
+      - ./certs/ca/ca.crt:/tmp/ca.crt
+      - ./certs/server/server.pem:/tmp/server.pem
+      - ./certs/server/server.key:/tmp/server.key
+    networks:
+      - mtls-example
+  
+  mtls-webapi-server:
+    container_name: mtls-webapi-server
+    build:
+      context: .
+      args:
+        PROJECT: src/webapi/Server/
+    image: mtls-webapi-server:local
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      PORT: 5683
+      CLIENT_CERT_FORWARDING_HEADER: ssl-client-cert
+    ports:
+      - "5683:5683"
+    networks:
+      - mtls-example

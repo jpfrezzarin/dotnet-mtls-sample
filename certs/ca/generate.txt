@@ -1,0 +1,1 @@
+openssl req -x509 -nodes -days 3650 -keyout ca.key -out ca.pem -config ca.config && openssl x509 -outform PEM -in ca.pem -out ca.crt

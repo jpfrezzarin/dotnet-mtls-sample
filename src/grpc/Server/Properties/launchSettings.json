@@ -1,0 +1,13 @@
+﻿{
+  "profiles": {
+    "gRPC Server": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": false,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "PORT": "6684"
+      }
+    }
+  }
+}

@@ -1,0 +1,124 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "certs", "certs", "{4EC74472-FAE4-4748-9EFC-781146323944}"
+	ProjectSection(SolutionItems) = preProject
+		certs\README.md = certs\README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "others", "others", "{7ACC1F1F-EC36-4ED4-AE00-3C6ACCBADF13}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose-webapi-nginx.yml = docker-compose-webapi-nginx.yml
+		Dockerfile = Dockerfile
+		docker-compose-webapi.yml = docker-compose-webapi.yml
+		docker-compose-grpc-nginx.yml = docker-compose-grpc-nginx.yml
+		docker-compose-grpc.yml = docker-compose-grpc.yml
+		README.md = README.md
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nginx", "nginx", "{12F6E82E-582B-4532-B0EB-840EE653147F}"
+	ProjectSection(SolutionItems) = preProject
+		nginx\grpc.http.conf = nginx\grpc.http.conf
+		nginx\webapi.http.conf = nginx\webapi.http.conf
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9EEE3551-00EA-4F37-B191-05F1C6A4479D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "webapi", "webapi", "{B1A081E9-15C8-468E-8B17-87EC2BA553B2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "grpc", "grpc", "{936148B3-E4C0-4BBE-9148-010DB7FA6003}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "src\webapi\Client\Client.csproj", "{35FA2C12-971B-4982-8E5B-86946747C2D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "src\webapi\Models\Models.csproj", "{45944235-97D8-457E-9A13-39A000255586}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "src\webapi\Server\Server.csproj", "{DBDE992E-48A7-4EE8-8918-3C0294E38143}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ca", "ca", "{90BB1B54-EBDD-4C41-9386-C2DB38535FAC}"
+	ProjectSection(SolutionItems) = preProject
+		certs\ca\ca.config = certs\ca\ca.config
+		certs\ca\ca.crt = certs\ca\ca.crt
+		certs\ca\ca.pem = certs\ca\ca.pem
+		certs\ca\README.md = certs\ca\README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "server", "server", "{BDE6B381-9530-4DB5-859E-A0D512D5436E}"
+	ProjectSection(SolutionItems) = preProject
+		certs\server\server.config = certs\server\server.config
+		certs\server\server.crt = certs\server\server.crt
+		certs\server\server.ext = certs\server\server.ext
+		certs\server\server.key = certs\server\server.key
+		certs\server\server.pem = certs\server\server.pem
+		certs\server\server.pfx = certs\server\server.pfx
+		certs\server\README.md = certs\server\README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "client", "client", "{54BE8D26-20CD-4001-8CE3-66831D5A035C}"
+	ProjectSection(SolutionItems) = preProject
+		certs\client\client.config = certs\client\client.config
+		certs\client\client.crt = certs\client\client.crt
+		certs\client\client.ext = certs\client\client.ext
+		certs\client\client.key = certs\client\client.key
+		certs\client\client.pem = certs\client\client.pem
+		certs\client\client.pfx = certs\client\client.pfx
+		certs\client\README.md = certs\client\README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "src\grpc\Server\Server.csproj", "{DC7FD0E7-B51E-4C43-917C-A0659C3778AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "src\grpc\Client\Client.csproj", "{926A2B2C-B14A-4B98-832E-D06DE649D6C7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Protos", "Protos", "{69133EAB-3B5F-49C7-ADA3-F4FA28E1B56F}"
+	ProjectSection(SolutionItems) = preProject
+		src\grpc\Protos\greet.proto = src\grpc\Protos\greet.proto
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{35FA2C12-971B-4982-8E5B-86946747C2D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35FA2C12-971B-4982-8E5B-86946747C2D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35FA2C12-971B-4982-8E5B-86946747C2D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35FA2C12-971B-4982-8E5B-86946747C2D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45944235-97D8-457E-9A13-39A000255586}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45944235-97D8-457E-9A13-39A000255586}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45944235-97D8-457E-9A13-39A000255586}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45944235-97D8-457E-9A13-39A000255586}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBDE992E-48A7-4EE8-8918-3C0294E38143}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBDE992E-48A7-4EE8-8918-3C0294E38143}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBDE992E-48A7-4EE8-8918-3C0294E38143}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBDE992E-48A7-4EE8-8918-3C0294E38143}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC7FD0E7-B51E-4C43-917C-A0659C3778AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC7FD0E7-B51E-4C43-917C-A0659C3778AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC7FD0E7-B51E-4C43-917C-A0659C3778AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC7FD0E7-B51E-4C43-917C-A0659C3778AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{926A2B2C-B14A-4B98-832E-D06DE649D6C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{926A2B2C-B14A-4B98-832E-D06DE649D6C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{926A2B2C-B14A-4B98-832E-D06DE649D6C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{926A2B2C-B14A-4B98-832E-D06DE649D6C7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4EC74472-FAE4-4748-9EFC-781146323944} = {7ACC1F1F-EC36-4ED4-AE00-3C6ACCBADF13}
+		{12F6E82E-582B-4532-B0EB-840EE653147F} = {7ACC1F1F-EC36-4ED4-AE00-3C6ACCBADF13}
+		{B1A081E9-15C8-468E-8B17-87EC2BA553B2} = {9EEE3551-00EA-4F37-B191-05F1C6A4479D}
+		{936148B3-E4C0-4BBE-9148-010DB7FA6003} = {9EEE3551-00EA-4F37-B191-05F1C6A4479D}
+		{35FA2C12-971B-4982-8E5B-86946747C2D9} = {B1A081E9-15C8-468E-8B17-87EC2BA553B2}
+		{45944235-97D8-457E-9A13-39A000255586} = {B1A081E9-15C8-468E-8B17-87EC2BA553B2}
+		{DBDE992E-48A7-4EE8-8918-3C0294E38143} = {B1A081E9-15C8-468E-8B17-87EC2BA553B2}
+		{90BB1B54-EBDD-4C41-9386-C2DB38535FAC} = {4EC74472-FAE4-4748-9EFC-781146323944}
+		{BDE6B381-9530-4DB5-859E-A0D512D5436E} = {4EC74472-FAE4-4748-9EFC-781146323944}
+		{54BE8D26-20CD-4001-8CE3-66831D5A035C} = {4EC74472-FAE4-4748-9EFC-781146323944}
+		{DC7FD0E7-B51E-4C43-917C-A0659C3778AF} = {936148B3-E4C0-4BBE-9148-010DB7FA6003}
+		{926A2B2C-B14A-4B98-832E-D06DE649D6C7} = {936148B3-E4C0-4BBE-9148-010DB7FA6003}
+		{69133EAB-3B5F-49C7-ADA3-F4FA28E1B56F} = {936148B3-E4C0-4BBE-9148-010DB7FA6003}
+	EndGlobalSection
+EndGlobal

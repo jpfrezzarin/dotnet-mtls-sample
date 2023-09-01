@@ -1,0 +1,36 @@
+version: '3.7'
+
+networks:
+  mtls-example:
+    name: mtls-example
+
+services:
+  mtls-grpc-proxy:
+    container_name: mtls-grpc-proxy
+    image: nginx:latest
+    ports:
+      - 5000:5000
+      - 6684:6684
+    volumes:
+      - ./nginx/grpc.http.conf:/etc/nginx/conf.d/http.conf
+      - ./certs/ca/ca.crt:/tmp/ca.crt
+      - ./certs/server/server.pem:/tmp/server.pem
+      - ./certs/server/server.key:/tmp/server.key
+    networks:
+      - mtls-example
+
+  mtls-grpc-server:
+    container_name: mtls-grpc-server
+    build:
+      context: .
+      args:
+        PROJECT: src/grpc/Server/
+    image: mtls-grpc-server:local
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      PORT: 6683
+      CLIENT_CERT_FORWARDING_HEADER: ssl-client-cert
+    ports:
+      - "6683:6683"
+    networks:
+      - mtls-example

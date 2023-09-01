@@ -1,0 +1,21 @@
+version: '3.7'
+
+networks:
+  mtls-example:
+    name: mtls-example
+
+services:
+  mtls-webapi-server:
+    container_name: mtls-webapi-server
+    build:
+      context: .
+      args:
+        PROJECT: src/webapi/Server/
+    image: mtls-webapi-server:local
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      PORT: 5684
+    ports:
+      - "5684:5684"
+    networks:
+      - mtls-example

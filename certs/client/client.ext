@@ -1,0 +1,4 @@
+keyUsage = nonRepudiation, digitalSignature, keyEncipherment, dataEncipherment
+extendedKeyUsage = clientAuth
+basicConstraints=CA:FALSE
+authorityKeyIdentifier=keyid,issuer

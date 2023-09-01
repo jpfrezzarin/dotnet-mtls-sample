@@ -1,0 +1,21 @@
+version: '3.7'
+
+networks:
+  mtls-example:
+    name: mtls-example
+
+services:
+  mtls-grpc-server:
+    container_name: mtls-grpc-server
+    build:
+      context: .
+      args:
+        PROJECT: src/grpc/Server/
+    image: mtls-grpc-server:local
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      PORT: 6684
+    ports:
+      - "6684:6684"
+    networks:
+      - mtls-example
