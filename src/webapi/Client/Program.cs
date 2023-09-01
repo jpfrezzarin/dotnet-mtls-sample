@@ -2,7 +2,11 @@
 using Models;
 using Newtonsoft.Json;
 
+#if RELEASE
+const string baseUrl = "https://mtls-example-webapi.friday.local";
+#else
 const string baseUrl = "https://localhost:5684";
+#endif
 
 Console.WriteLine("Getting the weather forecast... ");
 

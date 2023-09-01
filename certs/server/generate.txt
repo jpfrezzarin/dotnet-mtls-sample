@@ -1,5 +1,0 @@
-openssl genrsa -out internal.key 2048
-openssl req -new -key internal.key -out internal.csr -config internal.config
-openssl x509 -req -in internal.csr -CA ../ca/ca.pem -CAkey ../ca/ca.key -CAcreateserial -out internal.pem -days 3650 -sha256 -extfile internal.ext
-openssl x509 -outform PEM -in internal.pem -out internal.crt
-openssl pkcs12 -export -out internal.pfx -inkey internal.key -in internal.crt

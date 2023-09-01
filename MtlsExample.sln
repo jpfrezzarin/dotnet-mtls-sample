@@ -40,30 +40,20 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ca", "ca", "{90BB1B54-EBDD-4C41-9386-C2DB38535FAC}"
 	ProjectSection(SolutionItems) = preProject
 		certs\ca\ca.config = certs\ca\ca.config
-		certs\ca\ca.crt = certs\ca\ca.crt
-		certs\ca\ca.pem = certs\ca\ca.pem
 		certs\ca\README.md = certs\ca\README.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "server", "server", "{BDE6B381-9530-4DB5-859E-A0D512D5436E}"
 	ProjectSection(SolutionItems) = preProject
 		certs\server\server.config = certs\server\server.config
-		certs\server\server.crt = certs\server\server.crt
 		certs\server\server.ext = certs\server\server.ext
-		certs\server\server.key = certs\server\server.key
-		certs\server\server.pem = certs\server\server.pem
-		certs\server\server.pfx = certs\server\server.pfx
 		certs\server\README.md = certs\server\README.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "client", "client", "{54BE8D26-20CD-4001-8CE3-66831D5A035C}"
 	ProjectSection(SolutionItems) = preProject
 		certs\client\client.config = certs\client\client.config
-		certs\client\client.crt = certs\client\client.crt
 		certs\client\client.ext = certs\client\client.ext
-		certs\client\client.key = certs\client\client.key
-		certs\client\client.pem = certs\client\client.pem
-		certs\client\client.pfx = certs\client\client.pfx
 		certs\client\README.md = certs\client\README.md
 	EndProjectSection
 EndProject
@@ -76,13 +66,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Protos", "Protos", "{69133E
 		src\grpc\Protos\greet.proto = src\grpc\Protos\greet.proto
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ingress", "ingress", "{1B263845-7CE7-443F-BB9B-9E587420DB35}"
+	ProjectSection(SolutionItems) = preProject
+		certs\ingress\ingress.config = certs\ingress\ingress.config
+		certs\ingress\ingress.ext = certs\ingress\ingress.ext
+		certs\ingress\README.md = certs\ingress\README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{35FA2C12-971B-4982-8E5B-86946747C2D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -106,6 +100,9 @@ Global
 		{926A2B2C-B14A-4B98-832E-D06DE649D6C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{926A2B2C-B14A-4B98-832E-D06DE649D6C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{4EC74472-FAE4-4748-9EFC-781146323944} = {7ACC1F1F-EC36-4ED4-AE00-3C6ACCBADF13}
 		{12F6E82E-582B-4532-B0EB-840EE653147F} = {7ACC1F1F-EC36-4ED4-AE00-3C6ACCBADF13}
@@ -120,5 +117,6 @@ Global
 		{DC7FD0E7-B51E-4C43-917C-A0659C3778AF} = {936148B3-E4C0-4BBE-9148-010DB7FA6003}
 		{926A2B2C-B14A-4B98-832E-D06DE649D6C7} = {936148B3-E4C0-4BBE-9148-010DB7FA6003}
 		{69133EAB-3B5F-49C7-ADA3-F4FA28E1B56F} = {936148B3-E4C0-4BBE-9148-010DB7FA6003}
+		{1B263845-7CE7-443F-BB9B-9E587420DB35} = {4EC74472-FAE4-4748-9EFC-781146323944}
 	EndGlobalSection
 EndGlobal

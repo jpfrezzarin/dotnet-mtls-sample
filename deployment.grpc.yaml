@@ -1,0 +1,81 @@
+# Ingress
+kind: Ingress
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: mtls-grpc-server-ingress
+  namespace: mtls-example
+  labels:
+    name: mtls-grpc-server-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/backend-protocol: "GRPCS"
+    nginx.ingress.kubernetes.io/auth-tls-secret: "mtls-example/ca-certificate"
+    nginx.ingress.kubernetes.io/auth-tls-pass-certificate-to-upstream: "true"
+    nginx.ingress.kubernetes.io/auth-tls-verify-client: "on"
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+      - mtls-example-grpc.friday.local
+      secretName: ingress-tls
+  rules:
+    - host: mtls-example-grpc.friday.local
+      http:
+        paths:
+        - path: "/"
+          pathType: Prefix
+          backend:
+            service:
+              name: mtls-grpc-server-service
+              port: 
+                number: 80
+---
+# Service
+kind: Service
+apiVersion: v1
+metadata:
+  name: mtls-grpc-server-service
+  namespace: mtls-example
+spec:
+  selector:
+    app: mtls-grpc-server
+  ports: 
+  - name: mtls-grpc-server-port
+    port: 80
+---
+# Deployment
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: mtls-grpc-server
+  namespace: mtls-example
+spec:
+  selector:
+    matchLabels:
+      app: mtls-grpc-server
+  template:
+    metadata:
+      labels:
+        app: mtls-grpc-server
+    spec:
+      volumes:
+      - name: tls-secret
+        secret:
+          secretName: pod-tls
+      containers:
+      - name: mtls-grpc-server
+        image: mtls-grpc-server:local
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        env:
+        - name: "ASPNETCORE_ENVIRONMENT"
+          value: "Production"
+        - name: "PORT"
+          value: "80"
+        - name: "CLIENT_CERT_FORWARDING_HEADER"
+          value: "ssl-client-cert"
+        volumeMounts:
+        - name: tls-secret
+          mountPath: /etc/tls 
+          readOnly: true
