@@ -29,7 +29,7 @@ openssl x509 -req -in client.csr -CA ../ca/ca.pem -CAkey ../ca/ca.key -CAcreates
 4) Generate `.crt` from `.pem`:
 
 ```shell
-openssl x509 -req -in client.csr -CA ../ca/ca.pem -CAkey ../ca/ca.key -CAcreateserial -out client.pem -days 3650 -sha256 -extfile client.ext
+openssl x509 -outform PEM -in client.pem -out client.crt
 ```
 
 5) Generate `.pfx` from `.pem` and `.key`:
