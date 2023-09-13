@@ -29,7 +29,7 @@ openssl x509 -req -in ingress.csr -CA ../ca/ca.pem -CAkey ../ca/ca.key -CAcreate
 4) Generate `.crt` from `.pem`:
 
 ```shell
-openssl x509 -req -in ingress.csr -CA ../ca/ca.pem -CAkey ../ca/ca.key -CAcreateserial -out ingress.pem -days 3650 -sha256 -extfile ingress.ext
+openssl x509 -outform PEM -in ingress.pem -out ingress.crt
 ```
 
 5) Generate `.pfx` from `.pem` and `.key`:
